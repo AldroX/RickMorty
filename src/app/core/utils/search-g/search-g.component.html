@@ -1,0 +1,20 @@
+<div class="bg-gradient-to-br from from-[rgba(75,30,133,1)] to-[rgba(75,30,133,0.01)]   py-2 m-2 p-2 bg-gray-200 border-2 rounded-md border-gray-600 shadow-lg shadow-purple-700">
+    <form 
+    action="" 
+    [formGroup]="searchForm"
+    (ngSubmit)="onSubmit()">
+        <div class="flex flex-row justify-center px-2 py-2">
+            <input 
+            type="text" 
+            placeholder="Buscar..." 
+            class="border border-gray-300 rounded-lg py-2 px-4 w-full max-w-md focus:outline-none focus:ring-2 focus:ring-green-500 mr-2"
+            formControlName="search"
+            >
+            <button 
+            class="bg-green-900 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="submit"
+            >
+              Filtrar
+            </button>
+        </div>
+    </form>

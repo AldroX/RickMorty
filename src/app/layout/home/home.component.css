@@ -1,0 +1,9 @@
+.test{
+    color: white;
+    background: url('/assets/img/morty.jfif');
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-position: center;
+    background-size: cover;
+    -webkit-text-stroke: 1px white;
+}

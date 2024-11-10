@@ -1,0 +1,54 @@
+/* @import url("https: //fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display-swap");
+ */
+
+ .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color:#11998E;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    z-index: 100;
+ }
+
+ 
+ .logo{
+     font-size: 32px;
+     color: rgb(209, 219, 219);
+     text-decoration: none;
+     font-weight: 700;
+    } 
+    
+.navbar a{
+       position: relative;
+       font-size: 20px;
+       color: aliceblue;
+       font-weight: 500;
+       text-decoration: none;
+       margin-left: 20px;
+    }
+
+ .navbar a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+ }
+
+ .navbar a:hover::before{
+    width: 100%;
+
+ }
+
+ .icono-navbar {
+   width: 40px; /* Ajusta el tamaño como desees */
+   height: auto;
+   display: inline-block; /* Asegúrate de que se muestre */
+ }
