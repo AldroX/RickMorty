@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CharactersService } from '../../core/services/characters.services/characters.service';
 import { Character } from '../../core/interfaces/characters/characters.interface';
 
@@ -9,6 +9,7 @@ import { Character } from '../../core/interfaces/characters/characters.interface
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink
   ],
   template: `
   <div class="py-40 px-10 flex justify-center">
@@ -17,7 +18,7 @@ import { Character } from '../../core/interfaces/characters/characters.interface
     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
       <img 
       class="object-cover w-full rounded-t-lg h-100 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" 
-      src="{{character.image}}" 
+      routerLink="{{character.image}}" 
       alt="">
      <div 
      class="flex flex-col justify-between p-4 leading-normal">
