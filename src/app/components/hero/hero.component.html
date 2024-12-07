@@ -1,36 +1,41 @@
-<section class="pt-20 max-w-[100rem] mx-auto p-4">
-   <app-search
-    (speciesEmited)="showSpecie($event)"
-    (statusEmitted)="showStatus($event)"
-    (genderEmitted)="showGender($event)"
-    (nameEmitted)="showName($event)"
-    />
+<section class="pt-10 max-w-7xl mx-auto p-4">
+
     @defer{
       @if (!errorMessage) {
         <div 
-        class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-20  mx-auto p-4">
+        class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2  p-4 my-10"
+        infinite-scroll 
+        [infiniteScrollDistance]="2"
+        [infiniteScrollUpDistance]="1.5" 
+        [infiniteScrollThrottle]="150"
+        (scrolled)="onScroll()"
+        >
         @for (character of characters; track character.id) {
           
           <app-card [characters]="character"/>
          
         }@empty {
-          <h2>Mejor Cartle JEJE</h2>
+          <div class="container flex justify-center">
+            <h2 class="text-gray-800 text-center">no hay datos</h2>
+          </div>
          }
         </div>
       }@else {
         <app-error [messageError]="errorMessage"/>
       }
     }@loading(minimum 1000) {
-      <app-load-spiner></app-load-spiner>
+      <div class="pt-40">
+        <app-load-spiner></app-load-spiner>
+      </div>
       <!-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-20 mx-auto p-4">
         @for (item of characters; track $index) {
           <app-skeleton [character]="item"/>
         }
       </div> -->
     }
-   @if (!errorMessage) {
+   <!-- @if (!errorMessage) {
     <div class="flex flex-row justify-between  ">
-      <!-- Previous Button -->
+    
       <a 
       (click)="prevPage()" 
       class="ml-4 cursor-pointer hover:bounce flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-yellow-200 bg-green-600 border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
@@ -48,5 +53,5 @@
         </svg>
       </a>
     </div>
-    }
+    } -->
 </section>

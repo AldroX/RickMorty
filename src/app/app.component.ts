@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { initFlowbite } from 'flowbite';
 import HomeComponent from './layout/home/home.component';
+import { SearchGComponent } from './core/utils/search-g/search-g.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import HomeComponent from './layout/home/home.component';
   imports: [
     RouterOutlet,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    SearchGComponent,
+    
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

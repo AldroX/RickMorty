@@ -12,6 +12,9 @@ module.exports = {
       },
       backgroundImage:{
         'heroRick': "url('/assets/img/morty.jfif')"
+      },
+      container:{
+        center:true,
       }
     },
   },

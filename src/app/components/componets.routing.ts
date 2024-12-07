@@ -6,7 +6,7 @@ export const COMPONETS_ROUTES:Routes = [
      loadComponent: () => import('./hero/hero.component')
    },
    {
-    path:'hola:id',
+    path:'show_character/:id',
     loadComponent: () => import('./showCharacter/showCharacter.component')
    },
 

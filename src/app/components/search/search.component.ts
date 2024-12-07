@@ -3,6 +3,7 @@ import { CharactersService } from '../../core/services/characters.services/chara
 import { Character } from '../../core/interfaces/characters/characters.interface';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { SearchService } from '../../core/services/search.service';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
   styleUrl: './search.component.css'
 })
 export class SearchComponent{
+  searchTerm:string = ''
+  private searchService = inject(SearchService)
 
 constructor(){
   this.onSubmit()
@@ -22,11 +25,13 @@ onSubmit() {
   this.search.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe({
     next: data => {
       try {
-        if(data) this.nameEmitted.emit(data)
-        
+        if(data) 
+          this.searchTerm = data
+          this.searchService.setSearchTerm(this.searchTerm)
+          console.log('estoy desde el componet search:',this.searchTerm)
       } catch (error) {
         console.log(error)
-        
+      
       }
     },
     

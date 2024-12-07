@@ -66,4 +66,6 @@ export class CharactersService {
       map((response) => response.results.map((character:Character)=> character.species))
     )
   }
+
+  
 }
